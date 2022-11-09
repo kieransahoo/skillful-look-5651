@@ -17,7 +17,7 @@ Users are
 
 # Role of the users- 
 
-1. Administrator 
+## 1. Administrator 
 
 A. View the registered buyer list. 
 
@@ -29,7 +29,7 @@ D. View the daily selling report.
 
 E. Solve the dispute report. 
 
-# 2. Seller 
+## 2. Seller 
 
 A. Register himself or herself as seller. 
 
@@ -43,7 +43,7 @@ E. Remove items from the list.
 
 F. View the sold Item history. 
 
-# 3. Buyer 
+## 3. Buyer 
 
 A. Register himself or herself as Buyer. 
 
