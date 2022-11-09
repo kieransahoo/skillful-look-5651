@@ -1,5 +1,4 @@
-# skillful-look-5651
-Automated Auction System
+# skillful-look-5651 - Automated Auction System
 
 # Problem Description: 
 
