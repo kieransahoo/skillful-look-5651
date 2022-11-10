@@ -10,7 +10,7 @@ Users are
 
 2. Buyer 
 
-3.Seller 
+3. Seller 
 
  
 
