@@ -50,3 +50,7 @@ B. Search and view Items by category.
 C. Select and view all the buyers and also their Items category wise. 
 
 D. Selects Items to buy. 
+
+# Tech Use / Tools
+- SQL
+- Java
