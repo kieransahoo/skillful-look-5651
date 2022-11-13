@@ -26,7 +26,6 @@ C. View the daily dispute report.
 
 D. View the daily selling report. 
 
-E. Solve the dispute report. 
 
 ## 2. Seller 
 
