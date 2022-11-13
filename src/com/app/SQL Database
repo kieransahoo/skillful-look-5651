@@ -34,18 +34,30 @@ mysql> select * from admin;
 +----------+----------+
 1 row in set (0.00 sec)
 
-==============Buyer Table ============================================
+mysql> show tables;
++-----------------------+
+| Tables_in_targetbiddb |
++-----------------------+
+| admin                 |
+| bidding               |
+| buyer                 |
+| product               |
+| seller                |
+| sold                  |
++-----------------------+
+6 rows in set (0.00 sec)
 
-mysql> Create table Buyer
-    -> (
-    -> bid int primary key auto_increment,
-    -> bname varchar(25) Not null,
-    -> bemail varchar(25) unique not null,
-    -> bpassword varchar(25) not null
-    -> );
-Query OK, 0 rows affected (0.03 sec)
+mysql> desc bidding;
++-----------+------+------+-----+---------+-------+
+| Field     | Type | Null | Key | Default | Extra |
++-----------+------+------+-----+---------+-------+
+| productId | int  | NO   | PRI | NULL    |       |
+| buyerId   | int  | YES  |     | NULL    |       |
+| bidprice  | int  | YES  |     | NULL    |       |
++-----------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
 
-mysql> desc Buyer;
+mysql> desc buyer;
 +-----------+-------------+------+-----+---------+----------------+
 | Field     | Type        | Null | Key | Default | Extra          |
 +-----------+-------------+------+-----+---------+----------------+
@@ -55,46 +67,6 @@ mysql> desc Buyer;
 | bpassword | varchar(25) | NO   |     | NULL    |                |
 +-----------+-------------+------+-----+---------+----------------+
 4 rows in set (0.00 sec)
-
-============================Seller Table ============================================
-
-mysql> Create table Seller
-    -> (
-    -> sid int primary key auto_increment,
-    -> sname varchar(25) not null,
-    -> semail varchar(25) unique not null,
-    -> spassword varchar(25) not null
-    -> );
-Query OK, 0 rows affected (0.03 sec)
-
-mysql> desc seller;
-+-----------+-------------+------+-----+---------+----------------+
-| Field     | Type        | Null | Key | Default | Extra          |
-+-----------+-------------+------+-----+---------+----------------+
-| sid       | int         | NO   | PRI | NULL    | auto_increment |
-| sname     | varchar(25) | NO   |     | NULL    |                |
-| semail    | varchar(25) | NO   | UNI | NULL    |                |
-| spassword | varchar(25) | NO   |     | NULL    |                |
-+-----------+-------------+------+-----+---------+----------------+
-4 rows in set (0.00 sec)
-
-============================ Seller Table =============================================
-
-
-
-
-
-============================ Product Table =============================================
-
-mysql> create table product
-    -> (
-    -> productId int primary key auto_increment,
-    -> productName varchar(25) not null,
-    -> productPrice int not null,
-    -> productcategory varchar(25) not null,
-    -> productQuantity int not null
-    -> );
-Query OK, 0 rows affected (0.02 sec)
 
 mysql> desc product;
 +-----------------+-------------+------+-----+---------+----------------+
@@ -108,26 +80,25 @@ mysql> desc product;
 +-----------------+-------------+------+-----+---------+----------------+
 5 rows in set (0.00 sec)
 
+mysql> desc seller;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| sid       | int         | NO   | PRI | NULL    | auto_increment |
+| sname     | varchar(25) | NO   |     | NULL    |                |
+| semail    | varchar(25) | NO   | UNI | NULL    |                |
+| spassword | varchar(25) | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
 
-
-mysql> create table sold
-(
-productId int not null,
-productName varchar(25) not null,
-soldPrice int not null,
-buyerId int,
-solddate date
-);
-Query OK, 0 rows affected (0.02 sec)
-
-mysql> desc sold
-    -> ;
+mysql> desc sold;
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
 +-------------+-------------+------+-----+---------+-------+
 | productId   | int         | NO   |     | NULL    |       |
 | productName | varchar(25) | NO   |     | NULL    |       |
 | soldPrice   | int         | NO   |     | NULL    |       |
+| buyerId     | int         | YES  |     | NULL    |       |
 | solddate    | date        | YES  |     | NULL    |       |
 +-------------+-------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
+5 rows in set (0.00 sec)
