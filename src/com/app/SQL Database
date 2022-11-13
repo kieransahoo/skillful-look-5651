@@ -79,3 +79,55 @@ mysql> desc seller;
 4 rows in set (0.00 sec)
 
 ============================ Seller Table =============================================
+
+
+
+
+
+============================ Product Table =============================================
+
+mysql> create table product
+    -> (
+    -> productId int primary key auto_increment,
+    -> productName varchar(25) not null,
+    -> productPrice int not null,
+    -> productcategory varchar(25) not null,
+    -> productQuantity int not null
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc product;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| productId       | int         | NO   | PRI | NULL    | auto_increment |
+| productName     | varchar(25) | NO   |     | NULL    |                |
+| productPrice    | int         | NO   |     | NULL    |                |
+| productcategory | varchar(25) | NO   |     | NULL    |                |
+| productQuantity | int         | NO   |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+
+
+mysql> create table sold
+(
+productId int not null,
+productName varchar(25) not null,
+soldPrice int not null,
+buyerId int,
+solddate date
+);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc sold
+    -> ;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| productId   | int         | NO   |     | NULL    |       |
+| productName | varchar(25) | NO   |     | NULL    |       |
+| soldPrice   | int         | NO   |     | NULL    |       |
+| solddate    | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
